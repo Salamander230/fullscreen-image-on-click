@@ -2,7 +2,7 @@ import { Plugin } from 'obsidian'
 
 export default class FullscreenImageOnClick extends Plugin {
 	onload() {
-		document.body.addEventListener('click', (event: MouseEvent) => {
+		document.addEventListener('click', (event: MouseEvent) => {
 			const target = (event.target as HTMLElement)
 			const img = target.closest("img:not([class^='img-full'])")
 			if (img) {
@@ -10,7 +10,7 @@ export default class FullscreenImageOnClick extends Plugin {
 				const clone = img.cloneNode(true) as HTMLElement;
 				document.body.appendChild(clone);
 				clone.addClass("img-full-height");
-				document.body.addEventListener('click', function handleClick() {
+				document.addEventListener('click', function handleClick() {
 				  if (clone.matches(":hover")) {
 					// toggle between fullheight/fullwidth when clicking on the image clone
 					if (clone.classList.contains("img-full-height")) {
