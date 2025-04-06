@@ -5,7 +5,6 @@ img {
 [class^="img-full"] {
     display: block;
     margin: 0 auto;
-    max-width: 98vw;
 }
 
 img:not(.img-full-width) {
@@ -13,12 +12,13 @@ img:not(.img-full-width) {
 }
 
 .img-full-height {
-    max-height: 100vh;
+    height: calc(100vh - 20px);
     width: auto;
+    max-width: unset;
 }
 
 .img-full-width {
-    width: 98vw;
+    width: calc(100vw - 20px);
     cursor: zoom-out;
 }
 
@@ -26,6 +26,12 @@ img:not(.img-full-width) {
     overflow: scroll;
     background-color: black;
 }
+body:has([class^="img-full"]) {
+    width: calc(100vw - 20px);
+    height: calc(100vh - 20px);
+    margin: 10px;
+}
+
 :has([class^="img-full"])::-webkit-scrollbar,
 :has([class^="img-full"]) :not([class^="img-full"]):not(:has([class^="img-full"])) {
     display: none;
