@@ -1,7 +1,11 @@
+img {
+    max-width: 100%;
+}
+
 [class^="img-full"] {
     display: block;
     margin: 0 auto;
-    max-width: 100vw;
+    max-width: 98vw;
 }
 
 img:not(.img-full-width) {
@@ -9,7 +13,7 @@ img:not(.img-full-width) {
 }
 
 .img-full-height {
-    height: 100vh;
+    max-height: 100vh;
     width: auto;
 }
 
