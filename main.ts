@@ -4,14 +4,18 @@ export default class FullscreenImageOnClick extends Plugin {
 	onload() {
 		document.addEventListener('click', (event: MouseEvent) => {
 			const target = (event.target as HTMLElement)
-			const img = target.closest("img:not([class^='img-full'])")
+			const img = target.closest("img:not(.img-full)")
 			if (img) {
 				// create an img clone for fullheight/fullwidth display
-				const clone = img.cloneNode(true) as HTMLElement;
+				const clone = img.cloneNode(true) as HTMLImageElement;
 				document.body.appendChild(clone);
-				clone.addClass("img-full-height");
+				clone.addClass("img-full");
 				if (clone.naturalWidth > clone.naturalHeight) {
-					clone.addClass("img-full-width-gt-height")
+					clone.addClass("img-full-width");
+					clone.addClass("width-gt-height");
+				} else if (clone.naturalWidth < clone.naturalHeight) {
+					clone.addClass("img-full-height");
+					clone.addClass("height-gt-width");
 				}
 				document.addEventListener('click', function handleClick() {
 				  if (clone.matches(":hover")) {
