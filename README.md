@@ -1,8 +1,8 @@
 # Fullscreen Image on Click
 
 Preview any image in fullscreen with a few simple clicks:
-- **First click**: Image takes up the entire screen height
-- **Second click**: Image takes up most of the screen width
+- **First click**: Image is resized to fit inside your obsidian window
+- **Second click**: Image is resized to maximize width/height with scrolling allowed
 
 Toggle back and forth between full height/width modes by clicking the image
 
