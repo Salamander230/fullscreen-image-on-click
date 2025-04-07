@@ -1,7 +1,7 @@
 {
 	"id": "fullscreen-image-on-click",
 	"name": "Fullscreen Image on Click",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"minAppVersion": "0.15.0",
 	"description": "Display fullscreen images with a simple click.",
 	"author": "Salamander230",
