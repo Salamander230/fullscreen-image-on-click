@@ -10,6 +10,9 @@ export default class FullscreenImageOnClick extends Plugin {
 				const clone = img.cloneNode(true) as HTMLElement;
 				document.body.appendChild(clone);
 				clone.addClass("img-full-height");
+				if (clone.naturalWidth > clone.naturalHeight) {
+					clone.addClass("img-full-width-gt-height")
+				}
 				document.addEventListener('click', function handleClick() {
 				  if (clone.matches(":hover")) {
 					// toggle between fullheight/fullwidth when clicking on the image clone
