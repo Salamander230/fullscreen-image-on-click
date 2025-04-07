@@ -31,6 +31,10 @@ body:has([class^="img-full"]) {
     height: calc(100vh - 20px);
     margin: 10px;
 }
+body:has(.img-full-width.img-full-width-gt-height) {
+    display: flex;
+    align-items: center;
+}
 
 :has([class^="img-full"])::-webkit-scrollbar,
 :has([class^="img-full"]) :not([class^="img-full"]):not(:has([class^="img-full"])) {
